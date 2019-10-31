@@ -1,15 +1,28 @@
-import org.junit.jupiter.api.Test;
-import printer.IPrinter;
-import printer.consolePrinter;
+import org.junit.Assert;
+import org.junit.Test;
+import java.io.IOException;
+import java.util.HashMap;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class processingTest {
+public class processingTest {
 
     @Test
-    void fileProcessing() throws Exception {
-        final IPrinter printer = new consolePrinter();
-        processing test1 = new processing("test1.txt",printer);
-        test1.fileProcessing();
+    public void test1() throws Exception {
+        processing test1 = new processing("test2.txt");
+        HashMap<String, Integer> actual = new HashMap<String,Integer>();
+        actual = test1.fileProcessing();
+        HashMap<String,Integer> expected = new HashMap<String,Integer>();
+        expected.put("h",4);
+        expected.put("q",3);
+        expected.put("f",2);
+        expected.put("s",1);
+        Assert.assertEquals(actual,expected);
     }
+
+    @Test
+    public void test2() throws Exception{
+        processing test1 = new processing("testtest.txt");
+        HashMap<String, Integer> actual = new HashMap<String,Integer>();
+        actual = test1.fileProcessing();
+    }
+
 }
