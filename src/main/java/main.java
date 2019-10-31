@@ -4,7 +4,7 @@ import java.util.Map;
 public class main {
     public static void main(String[] args) throws Exception {
 
-        processing data = new processing("text.txt");
+        processing data = new processing("test1.txt");
 
         Map<String,Integer> map = new HashMap<String, Integer>();
         map = data.fileProcessing();
